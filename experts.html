@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html class="smoothscroll" lang="ru">
+<!-- добовляем класс show-popup тегу html когда открываем модалку.  самой модалке добовляем класс popup_show  _ _ _ -->
+
+<head>
+	<title>Эксперты</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20240729172649">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+		<!-- добовляем класс  menu-open к боди или хедеру по нажатию на бургер -->
+		<header class="header undefined">
+			<!-- _scrolled-down этот класс добовляем хедеру когда пользователь скроллит вниз и убираем когда вверх  -->
+			<div class="header__container">
+				<div class="header__body">
+					<a class="header__star-logo logo-star" href="./main">
+						<svg width="30" height="29" viewBox="0 0 30 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M14.6211 1.5L17.5398 10.4828H26.9848L19.3436 16.0344L22.2623 25.0172L14.6211 19.4656L6.97989 25.0172L9.89857 16.0344L2.25736 10.4828H11.7024L14.6211 1.5Z" fill="#000" />
+						</svg>
+					</a>
+					<div class="header__item header-top">
+						<div class="header__logo logo">
+							<a href="./main" class="logo__img">
+								<img src="img/logo-desktop.svg" alt="логотип репутация Москва">
+							</a>
+							<!-- добовлять класс _active ↓ когда жмем на кнопку location__btn -->
+							<!-- <div class="header__location location">
+						<button class="location__btn" type="button">
+							<img class="location__icon" src="img/icons/location.svg" alt="">
+							<span>Москва</span>
+						</button>
+						<div class="location__popup">
+							<div class="location__popup__content">
+								<div>Ваш город <span>Москва</span></div>
+								<div class="location__btns">
+									<button type="button" class="btn btn-primary">Все верно</button>
+									<button type="button" class="btn-select-city">Выбрать другой</button>
+								</div>
+							</div>
+						</div>
+					</div> -->
+						</div>
+						<div class="header__contact contact">
+							<a class="contact__star-logo logo-star" href="./">
+								<svg width="30" height="29" viewBox="0 0 30 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M14.6211 1.5L17.5398 10.4828H26.9848L19.3436 16.0344L22.2623 25.0172L14.6211 19.4656L6.97989 25.0172L9.89857 16.0344L2.25736 10.4828H11.7024L14.6211 1.5Z" fill="#000" />
+								</svg>
+							</a>
+							<a class="contact__item _phone" href="tel:88002508865">8 (800) 250 88 65</a>
+							<a class="contact__item _mail" href="mailto:mail@reputation.moscow">mail@reputation.moscow</a>
+						</div>
+					</div>
+					<nav class="header__item header-bottom menu">
+						<ul class="menu__list">
+							<div class="menu__contact contact">
+								<a class="contact__item _mail" href="mailto:mail@reputation.moscow">mail@reputation.moscow</a>
+								<a class="contact__item _phone" href="tel:88002508865">8 (800) 250 88 65</a>
+							</div>
+							<li class="menu__item"><a href="./main" class="menu__link">Главная</a></li>
+							<li class="menu__item"><a href="./about" class="menu__link">О компании</a></li>
+							<li class="menu__item has-submenu">
+								<a href="./services" class="menu__link">
+									Все услуги
+								</a>
+								<ul class="menu__sublist">
+									<li class="menu__item"><a href="./service" class="menu__sublink">Удаление информации из
+											сети</a></li>
+									<li class="menu__item"><a href="#!" class="menu__sublink">Удаление негатива от
+											сотрудников</a></li>
+									<li class="menu__item"><a href="#!" class="menu__sublink">Право на забвение</a></li>
+									<li class="menu__item"><a href="#!" class="menu__sublink">Управление деловой
+											репутацией</a></li>
+									<li class="menu__item"><a href="#!" class="menu__sublink">Анализ имиджа компании</a>
+									</li>
+									<li class="menu__item"><a href="#!" class="menu__sublink">Исследование репутационных
+											угроз</a></li>
+									<li class="menu__item"><a href="#!" class="menu__sublink">Подобрать решение</a></li>
+								</ul>
+							<li class="menu__item"><a href="./cases" class="menu__link">Кейсы</a></li>
+							<li class="menu__item"><a href="./contacts" class="menu__link">Контакты</a></li>
+							<li class="menu__item"><a href="./blog" class="menu__link">Журнал</a></li>
+							<li class="menu__item search-item "><!--_search-open -->
+								<form class="search-form" action="#!">
+									<div class="search-form__body">
+										<button type="button" class="menu__link search-form__btn-search">
+											<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M14.1665 14.1667L17.4998 17.5001" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+												<path d="M2.5 9.16667C2.5 12.8486 5.48477 15.8333 9.16667 15.8333C11.0108 15.8333 12.6801 15.0846 13.887 13.8744C15.0897 12.6685 15.8333 11.0044 15.8333 9.16667C15.8333 5.48477 12.8486 2.5 9.16667 2.5C5.48477 2.5 2.5 5.48477 2.5 9.16667Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+											</svg>
+
+										</button>
+										<input class="search-form__input" type="search" placeholder="Например, как удалить информацию о себе">
+										<button class="search-form__btn-close">
+											<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="#1D1D1B">
+												<path d="M13.688 0.311472C13.4885 0.112038 13.218 0 12.9359 0C12.6539 0 12.3833 0.112038 12.1839 0.311472L6.99975 5.49608L1.81564 0.311472C1.61616 0.112038 1.34563 0 1.06355 0C0.781479 0 0.510953 0.112038 0.311472 0.311472C0.112038 0.510953 0 0.781479 0 1.06355C0 1.34563 0.112038 1.61616 0.311472 1.81564L5.49608 6.99975L0.311472 12.1844C0.112038 12.3838 0 12.6544 0 12.9364C0 13.2185 0.112038 13.489 0.311472 13.6885C0.510953 13.888 0.781479 14 1.06355 14C1.34563 14 1.61616 13.888 1.81564 13.6885L6.99975 8.50392L12.1844 13.688C12.3838 13.8875 12.6544 13.9995 12.9364 13.9995C13.2185 13.9995 13.489 13.8875 13.6885 13.688C13.888 13.4885 14 13.218 14 12.9359C14 12.6539 13.888 12.3833 13.6885 12.1839L8.50392 6.99975L13.688 1.81564C13.8875 1.61616 13.9995 1.34563 13.9995 1.06355C13.9995 0.781479 13.8875 0.510953 13.688 0.311472Z">
+												</path>
+											</svg>
+										</button>
+
+
+									</div>
+								</form>
+							</li>
+						</ul>
+
+						<ul class="menu__add-list">
+							<li class="menu__item">
+								<a href="./services" class="menu__link">Все услуги</a>
+							</li>
+							<li class="menu__item"><a href="#!" class="menu__sublink">Удаление информации из сети</a></li>
+							<li class="menu__item"><a href="#!" class="menu__sublink">Удаление негатива от сотрудников</a></li>
+							<li class="menu__item"><a href="#!" class="menu__sublink">Право на забвение</a></li>
+							<li class="menu__item"><a href="#!" class="menu__sublink">Управление деловой репутацией</a></li>
+							<li class="menu__item"><a href="#!" class="menu__sublink">Анализ имиджа компании</a></li>
+							<li class="menu__item"><a href="#!" class="menu__sublink">Исследование репутационных угроз</a></li>
+							<li class="menu__item"><a href="#!" class="menu__sublink">Подобрать решение</a></li>
+						</ul>
+						<div class="menu__actions actions">
+							<div class="actions__item">
+								<a class="btn btn-w-icon btn-secondary" href="#!">
+									<img src="img/icons/calc.svg" alt="">
+									<span>Репутационный калькулятор</span>
+									<span class="mobile-text">Калькулятор</span>
+								</a>
+							</div>
+							<div class="actions__item _delete-info">
+								<button class="btn btn-w-icon btn-primary">
+									<span>Удалить информацию</span>
+									<span class="mobile-text">Удалить</span>
+								</button>
+							</div>
+						</div>
+
+					</nav>
+					<div class="header__mobile">
+						<button class="menu__delete-info btn btn-primary">
+							Удалить
+						</button>
+						<button class="icon-menu">
+							<div></div>
+							<span></span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- этот бар в компаче Хедер ↓ -->
+		<div class="toast-bar toast-bar-static _success  _active">
+			<div class="toast-bar__content __container">
+				<div class="toast-bar__icon ">
+					<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M5.93145 10.9719C6.19993 10.7034 6.63523 10.7034 6.90372 10.9719L9.16758 13.2357L15.0981 7.30521C15.3666 7.03672 15.8019 7.03672 16.0704 7.30521C16.3389 7.57369 16.3389 8.00899 16.0704 8.27748L9.65372 14.6941C9.38523 14.9626 8.94993 14.9626 8.68145 14.6941L5.93145 11.9441C5.66296 11.6757 5.66296 11.2404 5.93145 10.9719Z" fill="#56883B" />
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M11.0007 2.52051C6.31774 2.52051 2.52148 6.31676 2.52148 10.9997C2.52148 15.6826 6.31774 19.4788 11.0007 19.4788C15.6836 19.4788 19.4798 15.6826 19.4798 10.9997C19.4798 6.31676 15.6836 2.52051 11.0007 2.52051ZM1.14648 10.9997C1.14648 5.55737 5.55834 1.14551 11.0007 1.14551C16.443 1.14551 20.8548 5.55737 20.8548 10.9997C20.8548 16.442 16.443 20.8538 11.0007 20.8538C5.55834 20.8538 1.14648 16.442 1.14648 10.9997Z" fill="#56883B" />
+					</svg>
+				</div>
+				<div class="toast-bar__text">
+					<div class="toast-bar__title">
+						На сайте ведутся технические работы. Чтобы мы быстрее с вами связались, позвоните нам или напишите на
+						почту.
+					</div>
+					<div class="toast-bar__subtitle d-none">Какой-то подзаголовок. Ой а вдруг он длинный, перенесется значит
+					</div>
+				</div>
+			</div>
+			<div class="toast-bar__actions">
+				<button type="button" class="d-none toast-bar__btn btn btn-m btn-light">Пример кнопки</button>
+				<button type="button" class="toast-bar__close">
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M6.75729 17.2426L11.9999 12M17.2426 6.75736L11.9999 12M11.9999 12L6.75729 6.75736M11.9999 12L17.2426 17.2426" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+				</button>
+			</div>
+		</div>
+		<div class="toast-bar toast-bar-static   _active">
+			<div class="toast-bar__content __container">
+				<div class="toast-bar__icon _stroke">
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M2 19V5C2 3.89543 2.89543 3 4 3H20C21.1046 3 22 3.89543 22 5V19C22 20.1046 21.1046 21 20 21H4C2.89543 21 2 20.1046 2 19Z" stroke="white" stroke-width="1.5" />
+						<path d="M2 7L22 7" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+						<path d="M5 5.01L5.01 4.99889" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+						<path d="M8 5.01L8.01 4.99889" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+						<path d="M11 5.01L11.01 4.99889" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+						<path d="M11.6667 11L10 14H14L12.3333 17" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+				</div>
+				<div class="toast-bar__text">
+					<div class="toast-bar__title">
+						На сайте ведутся технические работы. Чтобы мы быстрее с вами связались, позвоните нам или напишите на
+						почту.
+					</div>
+					<div class="toast-bar__subtitle d-none">Какой-то подзаголовок. Ой а вдруг он длинный, перенесется значит
+					</div>
+				</div>
+			</div>
+			<div class="toast-bar__actions">
+				<button type="button" class="d-none toast-bar__btn btn btn-m btn-light">Пример кнопки</button>
+				<button type="button" class="toast-bar__close">
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M6.75729 17.2426L11.9999 12M17.2426 6.75736L11.9999 12M11.9999 12L6.75729 6.75736M11.9999 12L17.2426 17.2426" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+				</button>
+			</div>
+		</div>
+		<div class="toast-bar toast-bar-static _error  _active">
+			<div class="toast-bar__content __container">
+				<div class="toast-bar__icon _stroke">
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M12 7L12 13" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+						<path d="M12 17.01L12.01 16.9989" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+						<path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+				</div>
+				<div class="toast-bar__text">
+					<div class="toast-bar__title">
+						На сайте ведутся технические работы. Чтобы мы быстрее с вами связались, позвоните нам или напишите на
+						почту.
+					</div>
+					<div class="toast-bar__subtitle d-none">Какой-то подзаголовок. Ой а вдруг он длинный, перенесется значит
+					</div>
+				</div>
+			</div>
+			<div class="toast-bar__actions">
+				<button type="button" class="d-none toast-bar__btn btn btn-m btn-light">Пример кнопки</button>
+				<button type="button" class="toast-bar__close">
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M6.75729 17.2426L11.9999 12M17.2426 6.75736L11.9999 12M11.9999 12L6.75729 6.75736M11.9999 12L17.2426 17.2426" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+				</button>
+			</div>
+		</div>
+		<div class="page">
+			<section class="experts">
+				<div class="experts__container">
+					<div class="breadcrumbs experts__breadcrumbs">
+						<a class="breadcrumbs__item" href="#!">Главная</a>
+						<a class="breadcrumbs__item _active" href="#!">Эксперты</a>
+					</div>
+					<div class="experts__wrapper">
+						<div class="experts__main">
+							<h1 class="title title-page experts__title">Эксперты</h1>
+							<p class="experts__text">
+								Собрали в нашем блоге мнения ведущих отраслевых специалистов, готовых делиться знаниями
+								по защите и управлению репутацией в сети, работать по повышению результативности бизнеса
+								и развитию HR-бренда
+							</p>
+							<div class="experts__chipses chipses">
+								<a href="#!" target="_blank" class="chipses__item _active">
+									<div class="chipses__text">Все (286)</div>
+								</a>
+								<a href="#!" target="_blank" class="chipses__item">
+									<div class="chipses__text">AORM</div>
+								</a>
+								<a href="#!" target="_blank" class="chipses__item">
+									<div class="chipses__text">HR-маркетинг</div>
+								</a>
+								<a href="#!" target="_blank" class="chipses__item">
+									<div class="chipses__text">PR</div>
+								</a>
+								<a href="#!" target="_blank" class="chipses__item">
+									<div class="chipses__text">Аналитика</div>
+								</a>
+								<a href="#!" target="_blank" class="chipses__item">
+									<div class="chipses__text">Безопасность</div>
+								</a>
+								<a href="#!" target="_blank" class="chipses__item">
+									<div class="chipses__text">Дизайн</div>
+								</a>
+								<a href="#!" target="_blank" class="chipses__item">
+									<div class="chipses__text">Инвестиции</div>
+								</a>
+								<a href="#!" target="_blank" class="chipses__item">
+									<div class="chipses__text">Маркетинг</div>
+								</a>
+								<a href="#!" target="_blank" class="chipses__item">
+									<div class="chipses__text">Мониторинг информации</div>
+								</a>
+								<a href="#!" target="_blank" class="chipses__item">
+									<div class="chipses__text">Переговоры</div>
+								</a>
+								<a href="#!" target="_blank" class="chipses__item">
+									<div class="chipses__text">Право</div>
+								</a>
+								<a href="#!" target="_blank" class="chipses__item">
+									<div class="chipses__text">Продажи</div>
+								</a>
+								<a href="#!" target="_blank" class="chipses__item">
+									<div class="chipses__text">Разработка стратегий</div>
+								</a>
+								<a href="#!" target="_blank" class="chipses__item">
+									<div class="chipses__text">Удаление информации</div>
+								</a>
+								<a href="#!" target="_blank" class="chipses__item">
+									<div class="chipses__text">Управление бизнесом</div>
+								</a>
+
+							</div>
+							<div class="experts__people">
+								<ul class="experts__list">
+									<li class="experts__item">
+										<a href="#!" class="experts__link">
+											<div class="experts__img">
+												<picture><source srcset="https://reputation.moscow/wp-content/uploads/anton-shustikov-expert.webp" type="image/webp"><img src="https://reputation.moscow/wp-content/uploads/anton-shustikov-expert.jpg" alt=""></picture>
+											</div>
+											<div class="experts__name">Антон Шустиков</div>
+											<div class="experts__prof">СЕО ИБ проекта CakesCats</div>
+										</a>
+									</li>
+									<li class="experts__item">
+										<a href="#!" class="experts__link">
+											<div class="experts__img">
+												<picture><source srcset="https://reputation.moscow/wp-content/uploads/ira-vikulich.webp" type="image/webp"><img src="https://reputation.moscow/wp-content/uploads/ira-vikulich.jpg" alt=""></picture>
+											</div>
+											<div class="experts__name">Ира Викулич</div>
+											<div class="experts__prof">психолог-профайлер</div>
+										</a>
+									</li>
+									<li class="experts__item">
+										<a href="#!" class="experts__link">
+											<div class="experts__img">
+												<picture><source srcset="https://reputation.moscow/wp-content/uploads/olga-lenskaya-expert.webp" type="image/webp"><img src="https://reputation.moscow/wp-content/uploads/olga-lenskaya-expert.jpg" alt=""></picture>
+											</div>
+											<div class="experts__name">Ольга Ленская</div>
+											<div class="experts__prof">совладелец консалтинговой компании «Тринити
+												консалт»</div>
+										</a>
+									</li>
+									<li class="experts__item">
+										<a href="#!" class="experts__link">
+											<div class="experts__img">
+												<picture><source srcset="https://reputation.moscow/wp-content/uploads/kseniya-swartz-expert.webp" type="image/webp"><img src="https://reputation.moscow/wp-content/uploads/kseniya-swartz-expert.jpg" alt=""></picture>
+											</div>
+											<div class="experts__name">Ксения Шварц</div>
+											<div class="experts__prof">главный юрист по международным проектам Falcon
+												LLC (Канада)</div>
+										</a>
+									</li>
+									<li class="experts__item">
+										<a href="#!" class="experts__link">
+											<div class="experts__img">
+												<picture><source srcset="https://reputation.moscow/wp-content/uploads/nadejda-knyazeva-expert.webp" type="image/webp"><img src="https://reputation.moscow/wp-content/uploads/nadejda-knyazeva-expert.jpg" alt=""></picture>
+											</div>
+											<div class="experts__name">Надежда Князева</div>
+											<div class="experts__prof">эксперт по подбору персонала и карьерному
+												консультированию</div>
+										</a>
+									</li>
+									<li class="experts__item">
+										<a href="#!" class="experts__link">
+											<div class="experts__img">
+												<picture><source srcset="https://reputation.moscow/wp-content/uploads/ivan-lihodeevskiy-expert.webp" type="image/webp"><img src="https://reputation.moscow/wp-content/uploads/ivan-lihodeevskiy-expert.jpg" alt=""></picture>
+											</div>
+											<div class="experts__name">Иван Лиходиевский </div>
+											<div class="experts__prof">head of digital marketing Redmond</div>
+										</a>
+									</li>
+									<li class="experts__item">
+										<a href="#!" class="experts__link">
+											<div class="experts__img">
+												<picture><source srcset="https://reputation.moscow/wp-content/uploads/nataliya-pleshakova-expert.webp" type="image/webp"><img src="https://reputation.moscow/wp-content/uploads/nataliya-pleshakova-expert.jpg" alt=""></picture>
+											</div>
+											<div class="experts__name">Наталья Плешакова</div>
+											<div class="experts__prof">бизнес-консультант и трекер, экс-коммерческий
+												директор 2ГИС-Астана</div>
+										</a>
+									</li>
+									<li class="experts__item">
+										<a href="#!" class="experts__link">
+											<div class="experts__img">
+												<picture><source srcset="https://reputation.moscow/wp-content/uploads/anna-teterleva.webp" type="image/webp"><img src="https://reputation.moscow/wp-content/uploads/anna-teterleva.jpg" alt=""></picture>
+											</div>
+											<div class="experts__name">Анна Тетерлева</div>
+											<div class="experts__prof">директор ООО «Финансовые технологии — Аудит»,
+												эксперт по аудиту, бухучету и МСФО</div>
+										</a>
+									</li>
+									<li class="experts__item">
+										<a href="#!" class="experts__link">
+											<div class="experts__img">
+												<picture><source srcset="https://reputation.moscow/wp-content/uploads/mariya-dobrinskaya-expert.webp" type="image/webp"><img src="https://reputation.moscow/wp-content/uploads/mariya-dobrinskaya-expert.jpg" alt=""></picture>
+											</div>
+											<div class="experts__name">Мария Добринская</div>
+											<div class="experts__prof">эксперт по маркетингу, трекер, руководитель
+												отдела маркетинга холдинга «Мегапак»</div>
+										</a>
+									</li>
+									<li class="experts__item">
+										<a href="#!" class="experts__link">
+											<div class="experts__img">
+												<picture><source srcset="https://reputation.moscow/wp-content/uploads/anna-aristova.webp" type="image/webp"><img src="https://reputation.moscow/wp-content/uploads/anna-aristova.png" alt=""></picture>
+											</div>
+											<div class="experts__name">Анна Аристова</div>
+											<div class="experts__prof">эксперт по PR и личному брендингу</div>
+										</a>
+									</li>
+								</ul>
+								<button class="experts__btn btn btn-gray btn-load-more">Показать еще</button>
+							</div>
+						</div>
+						<aside class="experts__aside">
+							<div class="experts__aside-wrapp">
+								<div class="experts__widget experts-block _v2">
+									<div class="experts-block__list">
+										<div class="experts-block__avatar">
+											<picture><source srcset="https://reputation.moscow/wp-content/uploads/avatar01.webp" type="image/webp"><img src="https://reputation.moscow/wp-content/uploads/avatar01.png" alt=""></picture>
+										</div>
+										<div class="experts-block__avatar">
+											<picture><source srcset="https://reputation.moscow/wp-content/uploads/avatar02.webp" type="image/webp"><img src="https://reputation.moscow/wp-content/uploads/avatar02.png" alt=""></picture>
+										</div>
+										<div class="experts-block__avatar">
+											<picture><source srcset="https://reputation.moscow/wp-content/uploads/avatar03.webp" type="image/webp"><img src="https://reputation.moscow/wp-content/uploads/avatar03.png" alt=""></picture>
+										</div>
+										<div class="experts-block__avatar">
+											<picture><source srcset="https://reputation.moscow/wp-content/uploads/avatar04.webp" type="image/webp"><img src="https://reputation.moscow/wp-content/uploads/avatar04.png" alt=""></picture>
+										</div>
+										<div class="experts-block__avatar">
+											<picture><source srcset="https://reputation.moscow/wp-content/uploads/star-avatar.webp" type="image/webp"><img src="https://reputation.moscow/wp-content/uploads/star-avatar.png" alt=""></picture>
+										</div>
+									</div>
+									<div class="experts-block__title">Более 300 статей и комментариев от экспертов
+									</div>
+									<p class="experts-block__text">Как можно удалить информацию, как ответить
+										недовольному
+										клиенту и многое другое. Делимся экспертным мнением из разных сфер деятельности
+									</p>
+									<a href="#!" target="_blank" class="experts-block__btn btn-m btn btn-dark">Перейти в
+										журнал</a>
+								</div>
+							</div>
+						</aside>
+					</div>
+				</div>
+			</section>
+		</div>
+		<footer class="footer bg-dark experts__footer">
+			<div class="footer__container">
+				<div class="footer__top">
+					<div class="footer__body">
+						<a href="/" class="footer__logo"><img src="img/logo-light.svg" alt=""></a>
+						<div class="footer__col social-comp">
+							<p class="social-comp__text">Подписывайтесь, чтобы быть в курсе как бороться с онлайн-кризисами</p>
+							<div class="social-comp__link-icons">
+								<a href="" class="social-comp__link "><img src="img/icons/fb.svg" alt=""></a>
+								<a href="" class="social-comp__link "><img src="img/icons/vk.svg" alt=""></a>
+								<a href="" class="social-comp__link "><img src="img/icons/yt.svg" alt=""></a>
+								<a href="" class="social-comp__link "><img src="img/icons/vc.svg" alt=""></a>
+							</div>
+							<p class="social-comp__readers">Наша бизнес аудитория: 97 тысяч читателей</p>
+							<a target="_blank" href="#!" class="social-comp__safety">
+								<picture><source srcset="img/tinkoff.webp" type="image/webp"><img src="img/tinkoff.png" alt=""></picture>
+								<p>Надежность компании подтверждена Тинькофф</p>
+							</a>
+						</div>
+						<div class="footer__col footer-menu">
+							<div class="footer-menu__col">
+								<div class="footer-menu__title">Быстрые ссылки</div>
+								<ul class="footer-menu__list">
+									<li class="footer-menu__item"><a href="#!" class="footer-menu__link _head">Главная</a></li>
+									<li class="footer-menu__item"><a href="#!" class="footer-menu__link _head">О компании</a>
+									</li>
+									<li class="footer-menu__item"><a href="#!" class="footer-menu__link _head">Кейсы</a></li>
+									<li class="footer-menu__item"><a href="#!" class="footer-menu__link _head">Контакты</a></li>
+									<li class="footer-menu__item"><a href="#!" class="footer-menu__link _head">Журнал</a></li>
+									<li class="footer-menu__item"><a href="#!" class="footer-menu__link">Статьи</a></li>
+									<li class="footer-menu__item"><a href="#!" class="footer-menu__link">Стать автором</a></li>
+									<li class="footer-menu__item"><a href="#!" class="footer-menu__link">Правила перепечатки</a>
+									</li>
+								</ul>
+							</div>
+							<div class="footer-menu__col">
+								<div class="footer-menu__title">Услуги</div>
+								<ul class="footer-menu__list">
+									<li class="footer-menu__item"><a href="#!" class="footer-menu__link _head">Все услуги</a>
+									</li>
+									<li class="footer-menu__item"><a href="#!" class="footer-menu__link">Удаление информации из
+											сети</a></li>
+									<li class="footer-menu__item"><a href="#!" class="footer-menu__link">Удаление ссылок из
+											поиска</a></li>
+									<li class="footer-menu__item"><a href="#!" class="footer-menu__link">Удаление украденных
+											статей</a></li>
+									<li class="footer-menu__item"><a href="#!" class="footer-menu__link">Юридическое
+											удаление</a>
+									</li>
+									<li class="footer-menu__item"><a href="#!" class="footer-menu__link">Право на забвение</a>
+									</li>
+									<li class="footer-menu__item"><a href="#!" class="footer-menu__link">Управление
+											репутацией</a>
+									</li>
+									<li class="footer-menu__item"><a href="#!" class="footer-menu__link">Анализ репутации</a>
+									</li>
+									<li class="footer-menu__item"><a href="#!" class="footer-menu__link">Исследование
+											репутационных
+											угроз</a></li>
+									<li class="footer-menu__item"><a href="#!" class="footer-menu__link">Подобрать решение</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="footer__col footer-contacts">
+							<div class="footer-contacts__title">Контакты</div>
+							<div class="footer-contacts__contacts">
+								<a class="footer-contacts__link _mail" href="mailto:mail@reputation.moscow">
+									mail@reputation.moscow
+								</a>
+								<a class="footer-contacts__link _phone" href="tel:88002508865">8 (800) 250 88 65</a>
+							</div>
+							<address class="footer-contacts__address">
+								<p>420110, Казань, ул. Университетская, д. 5/37, оф. 501</p>
+								<p>123100, Москва, наб. Пресненская, д. 12, этаж 45, ком. 10, оф. 12</p>
+							</address>
+							<button class="footer-contacts__btn btn btn-primary btn-100 get-call">Заказать звонок</button>
+							<div class="footer__widget arsen-widget">
+								<div class="arsen-widget__img">
+									<picture><source srcset="https://reputation.moscow/wp-content/uploads/arsen.webp" type="image/webp"><img src="https://reputation.moscow/wp-content/uploads/arsen.png" alt=""></picture>
+								</div>
+								<div class="arsen-widget__content _light-clr">
+									<div class="arsen-widget__title">Есть вопрос или предложения?</div>
+									<div class="arsen-widget__text">
+										<button class="arsen-widget__link">Напишите Арсению</button>, директору Репутация Москва
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="footer__bottom footer-bottom">
+					<div class="footer-bottom__body">
+						<div class="footer-bottom__info">
+							<a target="_blank" href="#!" class="footer-bottom__link">Политика конфиденциальности</a>
+							<a target="_blank" href="#!" class="footer-bottom__link">Входим в Единый реестр аккредитованных
+								организаций, осуществляющих деятельность в области маркетинга и информационных технологий</a>
+							<div class="footer-bottom__copyright">
+								© 2012 – 2023 Репутация.Москва<br>
+								ООО "Репутейшн компани", ИНН 1655380387, ОГРН 1171690009600
+							</div>
+						</div>
+						<a href="#!" target="_blank" class="footer-bottom__brand">
+							<p>The Reputation.Earth Project</p>
+							<img src="img/logo-earth.svg" alt="">
+						</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<div class="toast-bar _coockie _active">
+			<div class="toast-bar__content ">
+				<div class="toast-bar__icon d-none">
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M2 19V5C2 3.89543 2.89543 3 4 3H20C21.1046 3 22 3.89543 22 5V19C22 20.1046 21.1046 21 20 21H4C2.89543 21 2 20.1046 2 19Z" stroke="white" stroke-width="1.5" />
+						<path d="M2 7L22 7" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+						<path d="M5 5.01L5.01 4.99889" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+						<path d="M8 5.01L8.01 4.99889" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+						<path d="M11 5.01L11.01 4.99889" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+						<path d="M11.6667 11L10 14H14L12.3333 17" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+				</div>
+				<div class="toast-bar__text">
+					<div class="toast-bar__title">
+						Этот сайт использует файлы cookie.
+					</div>
+					<div class="toast-bar__subtitle d-none">Какой-то подзаголовок. Ой а вдруг он длинный, перенесется значит
+					</div>
+				</div>
+			</div>
+			<div class="toast-bar__actions">
+				<button type="button" class="toast-bar__btn btn btn-m btn-light">Ок</button>
+				<button type="button" class="toast-bar__close d-none">
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M6.75729 17.2426L11.9999 12M17.2426 6.75736L11.9999 12M11.9999 12L6.75729 6.75736M11.9999 12L17.2426 17.2426" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+				</button>
+			</div>
+		</div>
+	</div>
+	<script src="js/app.min.js?_v=20240729172649"></script>
+</body>
+
+</html>

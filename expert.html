@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html class="smoothscroll" lang="ru">
+<!-- добовляем класс show-popup тегу html когда открываем модалку.  самой модалке добовляем класс popup_show  _ _ _ -->
+
+<head>
+	<title>Эксперты</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20240729172649">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+		<!-- добовляем класс  menu-open к боди или хедеру по нажатию на бургер -->
+		<header class="header undefined">
+			<!-- _scrolled-down этот класс добовляем хедеру когда пользователь скроллит вниз и убираем когда вверх  -->
+			<div class="header__container">
+				<div class="header__body">
+					<a class="header__star-logo logo-star" href="./main">
+						<svg width="30" height="29" viewBox="0 0 30 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M14.6211 1.5L17.5398 10.4828H26.9848L19.3436 16.0344L22.2623 25.0172L14.6211 19.4656L6.97989 25.0172L9.89857 16.0344L2.25736 10.4828H11.7024L14.6211 1.5Z" fill="#000" />
+						</svg>
+					</a>
+					<div class="header__item header-top">
+						<div class="header__logo logo">
+							<a href="./main" class="logo__img">
+								<img src="img/logo-desktop.svg" alt="логотип репутация Москва">
+							</a>
+							<!-- добовлять класс _active ↓ когда жмем на кнопку location__btn -->
+							<!-- <div class="header__location location">
+						<button class="location__btn" type="button">
+							<img class="location__icon" src="img/icons/location.svg" alt="">
+							<span>Москва</span>
+						</button>
+						<div class="location__popup">
+							<div class="location__popup__content">
+								<div>Ваш город <span>Москва</span></div>
+								<div class="location__btns">
+									<button type="button" class="btn btn-primary">Все верно</button>
+									<button type="button" class="btn-select-city">Выбрать другой</button>
+								</div>
+							</div>
+						</div>
+					</div> -->
+						</div>
+						<div class="header__contact contact">
+							<a class="contact__star-logo logo-star" href="./">
+								<svg width="30" height="29" viewBox="0 0 30 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M14.6211 1.5L17.5398 10.4828H26.9848L19.3436 16.0344L22.2623 25.0172L14.6211 19.4656L6.97989 25.0172L9.89857 16.0344L2.25736 10.4828H11.7024L14.6211 1.5Z" fill="#000" />
+								</svg>
+							</a>
+							<a class="contact__item _phone" href="tel:88002508865">8 (800) 250 88 65</a>
+							<a class="contact__item _mail" href="mailto:mail@reputation.moscow">mail@reputation.moscow</a>
+						</div>
+					</div>
+					<nav class="header__item header-bottom menu">
+						<ul class="menu__list">
+							<div class="menu__contact contact">
+								<a class="contact__item _mail" href="mailto:mail@reputation.moscow">mail@reputation.moscow</a>
+								<a class="contact__item _phone" href="tel:88002508865">8 (800) 250 88 65</a>
+							</div>
+							<li class="menu__item"><a href="./main" class="menu__link">Главная</a></li>
+							<li class="menu__item"><a href="./about" class="menu__link">О компании</a></li>
+							<li class="menu__item has-submenu">
+								<a href="./services" class="menu__link">
+									Все услуги
+								</a>
+								<ul class="menu__sublist">
+									<li class="menu__item"><a href="./service" class="menu__sublink">Удаление информации из
+											сети</a></li>
+									<li class="menu__item"><a href="#!" class="menu__sublink">Удаление негатива от
+											сотрудников</a></li>
+									<li class="menu__item"><a href="#!" class="menu__sublink">Право на забвение</a></li>
+									<li class="menu__item"><a href="#!" class="menu__sublink">Управление деловой
+											репутацией</a></li>
+									<li class="menu__item"><a href="#!" class="menu__sublink">Анализ имиджа компании</a>
+									</li>
+									<li class="menu__item"><a href="#!" class="menu__sublink">Исследование репутационных
+											угроз</a></li>
+									<li class="menu__item"><a href="#!" class="menu__sublink">Подобрать решение</a></li>
+								</ul>
+							<li class="menu__item"><a href="./cases" class="menu__link">Кейсы</a></li>
+							<li class="menu__item"><a href="./contacts" class="menu__link">Контакты</a></li>
+							<li class="menu__item"><a href="./blog" class="menu__link">Журнал</a></li>
+							<li class="menu__item search-item "><!--_search-open -->
+								<form class="search-form" action="#!">
+									<div class="search-form__body">
+										<button type="button" class="menu__link search-form__btn-search">
+											<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M14.1665 14.1667L17.4998 17.5001" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+												<path d="M2.5 9.16667C2.5 12.8486 5.48477 15.8333 9.16667 15.8333C11.0108 15.8333 12.6801 15.0846 13.887 13.8744C15.0897 12.6685 15.8333 11.0044 15.8333 9.16667C15.8333 5.48477 12.8486 2.5 9.16667 2.5C5.48477 2.5 2.5 5.48477 2.5 9.16667Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+											</svg>
+
+										</button>
+										<input class="search-form__input" type="search" placeholder="Например, как удалить информацию о себе">
+										<button class="search-form__btn-close">
+											<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="#1D1D1B">
+												<path d="M13.688 0.311472C13.4885 0.112038 13.218 0 12.9359 0C12.6539 0 12.3833 0.112038 12.1839 0.311472L6.99975 5.49608L1.81564 0.311472C1.61616 0.112038 1.34563 0 1.06355 0C0.781479 0 0.510953 0.112038 0.311472 0.311472C0.112038 0.510953 0 0.781479 0 1.06355C0 1.34563 0.112038 1.61616 0.311472 1.81564L5.49608 6.99975L0.311472 12.1844C0.112038 12.3838 0 12.6544 0 12.9364C0 13.2185 0.112038 13.489 0.311472 13.6885C0.510953 13.888 0.781479 14 1.06355 14C1.34563 14 1.61616 13.888 1.81564 13.6885L6.99975 8.50392L12.1844 13.688C12.3838 13.8875 12.6544 13.9995 12.9364 13.9995C13.2185 13.9995 13.489 13.8875 13.6885 13.688C13.888 13.4885 14 13.218 14 12.9359C14 12.6539 13.888 12.3833 13.6885 12.1839L8.50392 6.99975L13.688 1.81564C13.8875 1.61616 13.9995 1.34563 13.9995 1.06355C13.9995 0.781479 13.8875 0.510953 13.688 0.311472Z">
+												</path>
+											</svg>
+										</button>
+
+
+									</div>
+								</form>
+							</li>
+						</ul>
+
+						<ul class="menu__add-list">
+							<li class="menu__item">
+								<a href="./services" class="menu__link">Все услуги</a>
+							</li>
+							<li class="menu__item"><a href="#!" class="menu__sublink">Удаление информации из сети</a></li>
+							<li class="menu__item"><a href="#!" class="menu__sublink">Удаление негатива от сотрудников</a></li>
+							<li class="menu__item"><a href="#!" class="menu__sublink">Право на забвение</a></li>
+							<li class="menu__item"><a href="#!" class="menu__sublink">Управление деловой репутацией</a></li>
+							<li class="menu__item"><a href="#!" class="menu__sublink">Анализ имиджа компании</a></li>
+							<li class="menu__item"><a href="#!" class="menu__sublink">Исследование репутационных угроз</a></li>
+							<li class="menu__item"><a href="#!" class="menu__sublink">Подобрать решение</a></li>
+						</ul>
+						<div class="menu__actions actions">
+							<div class="actions__item">
+								<a class="btn btn-w-icon btn-secondary" href="#!">
+									<img src="img/icons/calc.svg" alt="">
+									<span>Репутационный калькулятор</span>
+									<span class="mobile-text">Калькулятор</span>
+								</a>
+							</div>
+							<div class="actions__item _delete-info">
+								<button class="btn btn-w-icon btn-primary">
+									<span>Удалить информацию</span>
+									<span class="mobile-text">Удалить</span>
+								</button>
+							</div>
+						</div>
+
+					</nav>
+					<div class="header__mobile">
+						<button class="menu__delete-info btn btn-primary">
+							Удалить
+						</button>
+						<button class="icon-menu">
+							<div></div>
+							<span></span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- этот бар в компаче Хедер ↓ -->
+		<div class="toast-bar toast-bar-static _success  _active">
+			<div class="toast-bar__content __container">
+				<div class="toast-bar__icon ">
+					<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M5.93145 10.9719C6.19993 10.7034 6.63523 10.7034 6.90372 10.9719L9.16758 13.2357L15.0981 7.30521C15.3666 7.03672 15.8019 7.03672 16.0704 7.30521C16.3389 7.57369 16.3389 8.00899 16.0704 8.27748L9.65372 14.6941C9.38523 14.9626 8.94993 14.9626 8.68145 14.6941L5.93145 11.9441C5.66296 11.6757 5.66296 11.2404 5.93145 10.9719Z" fill="#56883B" />
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M11.0007 2.52051C6.31774 2.52051 2.52148 6.31676 2.52148 10.9997C2.52148 15.6826 6.31774 19.4788 11.0007 19.4788C15.6836 19.4788 19.4798 15.6826 19.4798 10.9997C19.4798 6.31676 15.6836 2.52051 11.0007 2.52051ZM1.14648 10.9997C1.14648 5.55737 5.55834 1.14551 11.0007 1.14551C16.443 1.14551 20.8548 5.55737 20.8548 10.9997C20.8548 16.442 16.443 20.8538 11.0007 20.8538C5.55834 20.8538 1.14648 16.442 1.14648 10.9997Z" fill="#56883B" />
+					</svg>
+				</div>
+				<div class="toast-bar__text">
+					<div class="toast-bar__title">
+						На сайте ведутся технические работы. Чтобы мы быстрее с вами связались, позвоните нам или напишите на
+						почту.
+					</div>
+					<div class="toast-bar__subtitle d-none">Какой-то подзаголовок. Ой а вдруг он длинный, перенесется значит
+					</div>
+				</div>
+			</div>
+			<div class="toast-bar__actions">
+				<button type="button" class="d-none toast-bar__btn btn btn-m btn-light">Пример кнопки</button>
+				<button type="button" class="toast-bar__close">
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M6.75729 17.2426L11.9999 12M17.2426 6.75736L11.9999 12M11.9999 12L6.75729 6.75736M11.9999 12L17.2426 17.2426" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+				</button>
+			</div>
+		</div>
+		<div class="toast-bar toast-bar-static   _active">
+			<div class="toast-bar__content __container">
+				<div class="toast-bar__icon _stroke">
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M2 19V5C2 3.89543 2.89543 3 4 3H20C21.1046 3 22 3.89543 22 5V19C22 20.1046 21.1046 21 20 21H4C2.89543 21 2 20.1046 2 19Z" stroke="white" stroke-width="1.5" />
+						<path d="M2 7L22 7" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+						<path d="M5 5.01L5.01 4.99889" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+						<path d="M8 5.01L8.01 4.99889" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+						<path d="M11 5.01L11.01 4.99889" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+						<path d="M11.6667 11L10 14H14L12.3333 17" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+				</div>
+				<div class="toast-bar__text">
+					<div class="toast-bar__title">
+						На сайте ведутся технические работы. Чтобы мы быстрее с вами связались, позвоните нам или напишите на
+						почту.
+					</div>
+					<div class="toast-bar__subtitle d-none">Какой-то подзаголовок. Ой а вдруг он длинный, перенесется значит
+					</div>
+				</div>
+			</div>
+			<div class="toast-bar__actions">
+				<button type="button" class="d-none toast-bar__btn btn btn-m btn-light">Пример кнопки</button>
+				<button type="button" class="toast-bar__close">
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M6.75729 17.2426L11.9999 12M17.2426 6.75736L11.9999 12M11.9999 12L6.75729 6.75736M11.9999 12L17.2426 17.2426" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+				</button>
+			</div>
+		</div>
+		<div class="toast-bar toast-bar-static _error  _active">
+			<div class="toast-bar__content __container">
+				<div class="toast-bar__icon _stroke">
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M12 7L12 13" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+						<path d="M12 17.01L12.01 16.9989" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+						<path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+				</div>
+				<div class="toast-bar__text">
+					<div class="toast-bar__title">
+						На сайте ведутся технические работы. Чтобы мы быстрее с вами связались, позвоните нам или напишите на
+						почту.
+					</div>
+					<div class="toast-bar__subtitle d-none">Какой-то подзаголовок. Ой а вдруг он длинный, перенесется значит
+					</div>
+				</div>
+			</div>
+			<div class="toast-bar__actions">
+				<button type="button" class="d-none toast-bar__btn btn btn-m btn-light">Пример кнопки</button>
+				<button type="button" class="toast-bar__close">
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M6.75729 17.2426L11.9999 12M17.2426 6.75736L11.9999 12M11.9999 12L6.75729 6.75736M11.9999 12L17.2426 17.2426" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+				</button>
+			</div>
+		</div>
+		<div class="page">
+			<div class="expert">
+				<div class="expert__container">
+					<div class="breadcrumbs expert__breadcrumbs">
+						<a class="breadcrumbs__item" href="#!">Главная</a>
+						<a class="breadcrumbs__item" href="#!">Эксперты</a>
+						<a class="breadcrumbs__item _active" href="#!">Регина Шакирова</a>
+					</div>
+					<div class="expert__wrapper">
+						<div class="expert__main">
+							<section class="expert__about-section">
+								<div class="expert__head">
+									<div class="expert__img"><picture><source srcset="https://reputation.moscow/wp-content/uploads/regina-shakirova-expert.webp" type="image/webp"><img src="https://reputation.moscow/wp-content/uploads/regina-shakirova-expert.jpg" alt=""></picture></div>
+									<div class="expert__desc">
+										<h1 class="expert__name title">Регина Шакирова</h1>
+										<div class="expert__prof">эксперт по защите онлайн-репутации в России и СНГ
+										</div>
+										<div class="expert__social social-expert">
+											<a href="#!" target="_blank" class="social-expert__link _blink">
+												<svg class="tg" width="21" height="18" viewBox="0 0 21 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path fill-rule="evenodd" clip-rule="evenodd" d="M18.7748 0.429965C19.0219 0.325956 19.2924 0.290084 19.558 0.326082C19.8237 0.362081 20.0749 0.468633 20.2854 0.63465C20.496 0.800667 20.6582 1.02008 20.7551 1.27005C20.8521 1.52002 20.8803 1.79141 20.8368 2.05597L18.5688 15.813C18.3488 17.14 16.8928 17.901 15.6758 17.24C14.6578 16.687 13.1458 15.835 11.7858 14.946C11.1058 14.501 9.02276 13.076 9.27876 12.062C9.49876 11.195 12.9988 7.93696 14.9988 5.99997C15.7838 5.23897 15.4258 4.79997 14.4988 5.49997C12.1958 7.23797 8.50076 9.88097 7.27876 10.625C6.20076 11.281 5.63876 11.393 4.96676 11.281C3.74076 11.077 2.60376 10.761 1.67576 10.376C0.421761 9.85597 0.482761 8.13197 1.67476 7.62997L18.7748 0.429965Z" fill="white" />
+												</svg>
+											</a>
+											<a href="#!" target="_blank" class=" social-expert__link _blink">
+												<svg class="vk" width="24" height="14" viewBox="0 0 24 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path fill-rule="evenodd" clip-rule="evenodd" d="M21.1521 9.94284C21.1521 9.94284 23.0116 11.7794 23.4716 12.6292C23.4806 12.6415 23.4876 12.6551 23.4923 12.6695C23.6798 12.9834 23.7258 13.2295 23.6338 13.4112C23.4785 13.7114 22.953 13.862 22.7747 13.8747H19.488C19.2592 13.8747 18.7831 13.8149 18.2035 13.4147C17.7607 13.1053 17.3203 12.5959 16.8936 12.0979C16.2565 11.3585 15.7057 10.7168 15.1479 10.7168C15.0775 10.7166 15.0075 10.7283 14.9409 10.7513C14.5189 10.8847 13.983 11.4861 13.983 13.0881C13.983 13.5895 13.5874 13.8747 13.3102 13.8747H11.8049C11.292 13.8747 8.62169 13.6953 6.25384 11.1986C3.35239 8.14194 0.746491 2.01014 0.721191 1.95609C0.559041 1.55934 0.899441 1.34314 1.26744 1.34314H4.58634C5.03139 1.34314 5.17629 1.61224 5.27749 1.85374C5.39479 2.13089 5.82949 3.23949 6.54249 4.48494C7.69709 6.51124 8.40664 7.33579 8.97359 7.33579C9.08011 7.3361 9.18482 7.30833 9.27719 7.25529C10.0178 6.84819 9.87979 4.20319 9.84529 3.65809C9.84529 3.55229 9.84414 2.47704 9.46464 1.95724C9.19324 1.58464 8.73094 1.43974 8.45149 1.38684C8.52624 1.27874 8.68494 1.11314 8.88849 1.01539C9.39564 0.762386 10.3122 0.725586 11.2218 0.725586H11.7267C12.7134 0.739386 12.9687 0.802636 13.3275 0.893486C14.0497 1.06599 14.0635 1.53404 14.0002 3.12794C13.9818 3.58334 13.9623 4.09624 13.9623 4.69999C13.9623 4.82879 13.9565 4.97254 13.9565 5.11859C13.9347 5.93624 13.9059 6.85739 14.4832 7.23574C14.5581 7.28238 14.6446 7.30708 14.7328 7.30704C14.9329 7.30704 15.532 7.30704 17.157 4.51829C17.87 3.28664 18.422 1.83419 18.4599 1.72494C18.4921 1.66399 18.5887 1.49264 18.706 1.42364C18.7895 1.37924 18.8829 1.35706 18.9774 1.35924H22.8817C23.3072 1.35924 23.5958 1.42364 23.6522 1.58464C23.7465 1.84569 23.6338 2.64264 21.8513 5.05304C21.5511 5.45439 21.2878 5.80169 21.0566 6.10529C19.4409 8.22589 19.4409 8.33284 21.1521 9.94284Z" fill="white" />
+												</svg>
+											</a>
+											<a href="#!" target="_blank" class=" social-expert__link _blink">
+												<svg class="linkedin" width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M2.37109 0.674805C1.80751 0.674805 1.26701 0.898688 0.868492 1.2972C0.469977 1.69572 0.246094 2.23622 0.246094 2.7998C0.246094 3.36339 0.469977 3.90389 0.868492 4.30241C1.26701 4.70092 1.80751 4.9248 2.37109 4.9248C2.93468 4.9248 3.47518 4.70092 3.8737 4.30241C4.27221 3.90389 4.49609 3.36339 4.49609 2.7998C4.49609 2.23622 4.27221 1.69572 3.8737 1.2972C3.47518 0.898688 2.93468 0.674805 2.37109 0.674805ZM0.371094 6.6748C0.337942 6.6748 0.306147 6.68797 0.282705 6.71142C0.259263 6.73486 0.246094 6.76665 0.246094 6.7998V19.7998C0.246094 19.8688 0.302094 19.9248 0.371094 19.9248H4.37109C4.40425 19.9248 4.43604 19.9116 4.45948 19.8882C4.48292 19.8648 4.49609 19.833 4.49609 19.7998V6.7998C4.49609 6.76665 4.48292 6.73486 4.45948 6.71142C4.43604 6.68797 4.40425 6.6748 4.37109 6.6748H0.371094ZM6.87109 6.6748C6.83794 6.6748 6.80615 6.68797 6.78271 6.71142C6.75926 6.73486 6.74609 6.76665 6.74609 6.7998V19.7998C6.74609 19.8688 6.80209 19.9248 6.87109 19.9248H10.8711C10.9042 19.9248 10.936 19.9116 10.9595 19.8882C10.9829 19.8648 10.9961 19.833 10.9961 19.7998V12.7998C10.9961 12.3025 11.1936 11.8256 11.5453 11.474C11.8969 11.1223 12.3738 10.9248 12.8711 10.9248C13.3684 10.9248 13.8453 11.1223 14.1969 11.474C14.5485 11.8256 14.7461 12.3025 14.7461 12.7998V19.7998C14.7461 19.8688 14.8021 19.9248 14.8711 19.9248H18.8711C18.9042 19.9248 18.936 19.9116 18.9595 19.8882C18.9829 19.8648 18.9961 19.833 18.9961 19.7998V11.1798C18.9961 8.7528 16.8861 6.8548 14.4711 7.0738C13.7239 7.14183 12.992 7.32674 12.3021 7.6218L10.9961 8.1818V6.7998C10.9961 6.76665 10.9829 6.73486 10.9595 6.71142C10.936 6.68797 10.9042 6.6748 10.8711 6.6748H6.87109Z" fill="white" />
+												</svg>
+											</a>
+											<a href="#!" target="_blank" class=" social-expert__link _blink">
+												<svg class="fb" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M23.7998 12.3286C23.7998 5.96472 18.6478 0.799805 12.2998 0.799805C5.9518 0.799805 0.799805 5.96472 0.799805 12.3286C0.799805 17.9086 4.7558 22.5547 9.9998 23.6269V15.7873H7.6998V12.3286H9.9998V9.44642C9.9998 7.22136 11.8053 5.41133 14.0248 5.41133H16.8998V8.86998H14.5998C13.9673 8.86998 13.4498 9.38878 13.4498 10.0229V12.3286H16.8998V15.7873H13.4498V23.7998C19.2573 23.2234 23.7998 18.3121 23.7998 12.3286Z" fill="white" />
+												</svg>
+											</a>
+											<a href="#!" target="_blank" class=" social-expert__link _blink">
+												<svg class="globus" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path fill-rule="evenodd" clip-rule="evenodd" d="M8.642 0.473992C6.3128 1.14875 4.24208 2.50743 2.70033 4.37257C1.15859 6.23771 0.217501 8.52258 0 10.9287H5.50774C5.82704 7.26734 6.89295 3.70932 8.64028 0.472278L8.642 0.473992ZM5.50774 13.0714H0C0.217047 15.4777 1.15773 17.7627 2.69917 19.6282C4.24062 21.4936 6.31114 22.8527 8.64028 23.5279C6.89295 20.2908 5.82704 16.7328 5.50774 13.0714ZM11.401 23.9855C9.3129 20.69 8.03339 16.9511 7.66609 13.0714H16.3322C15.9649 16.9511 14.6854 20.69 12.5972 23.9855C12.1987 24.0048 11.7995 24.0048 11.401 23.9855ZM15.3597 23.5261C17.6886 22.8511 19.7589 21.4923 21.3004 19.6272C22.8418 17.7621 23.7826 15.4773 24 13.0714H18.4923C18.173 16.7328 17.107 20.2908 15.3597 23.5279V23.5261ZM18.4923 10.9287H24C23.783 8.52249 22.8423 6.2374 21.3008 4.37195C19.7594 2.5065 17.6889 1.14743 15.3597 0.472278C17.1071 3.7093 18.173 7.26733 18.4923 10.9287ZM11.401 0.0145951C11.8001 -0.00486502 12.1999 -0.00486502 12.599 0.0145951C14.6865 3.31027 15.9654 7.04922 16.3322 10.9287H7.66781C8.04131 7.02555 9.32358 3.28352 11.401 0.0145951Z" fill="white" />
+												</svg>
+											</a>
+											<a href="#!" target="_blank" class=" social-expert__link _blink">
+												<svg class='inst' width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M5.8 0H14.2C17.4 0 20 2.6 20 5.8V14.2C20 15.7383 19.3889 17.2135 18.3012 18.3012C17.2135 19.3889 15.7383 20 14.2 20H5.8C2.6 20 0 17.4 0 14.2V5.8C0 4.26174 0.61107 2.78649 1.69878 1.69878C2.78649 0.61107 4.26174 0 5.8 0ZM5.6 2C4.64522 2 3.72955 2.37928 3.05442 3.05442C2.37928 3.72955 2 4.64522 2 5.6V14.4C2 16.39 3.61 18 5.6 18H14.4C15.3548 18 16.2705 17.6207 16.9456 16.9456C17.6207 16.2705 18 15.3548 18 14.4V5.6C18 3.61 16.39 2 14.4 2H5.6ZM15.25 3.5C15.5815 3.5 15.8995 3.6317 16.1339 3.86612C16.3683 4.10054 16.5 4.41848 16.5 4.75C16.5 5.08152 16.3683 5.39946 16.1339 5.63388C15.8995 5.8683 15.5815 6 15.25 6C14.9185 6 14.6005 5.8683 14.3661 5.63388C14.1317 5.39946 14 5.08152 14 4.75C14 4.41848 14.1317 4.10054 14.3661 3.86612C14.6005 3.6317 14.9185 3.5 15.25 3.5ZM10 5C11.3261 5 12.5979 5.52678 13.5355 6.46447C14.4732 7.40215 15 8.67392 15 10C15 11.3261 14.4732 12.5979 13.5355 13.5355C12.5979 14.4732 11.3261 15 10 15C8.67392 15 7.40215 14.4732 6.46447 13.5355C5.52678 12.5979 5 11.3261 5 10C5 8.67392 5.52678 7.40215 6.46447 6.46447C7.40215 5.52678 8.67392 5 10 5ZM10 7C9.20435 7 8.44129 7.31607 7.87868 7.87868C7.31607 8.44129 7 9.20435 7 10C7 10.7956 7.31607 11.5587 7.87868 12.1213C8.44129 12.6839 9.20435 13 10 13C10.7956 13 11.5587 12.6839 12.1213 12.1213C12.6839 11.5587 13 10.7956 13 10C13 9.20435 12.6839 8.44129 12.1213 7.87868C11.5587 7.31607 10.7956 7 10 7Z" fill="white" />
+												</svg>
+											</a>
+											<a href="#!" target="_blank" class=" social-expert__link _blink">
+												<svg class='yt' width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M8 10L13.19 7L8 4V10ZM19.56 2.17C19.69 2.64 19.78 3.27 19.84 4.07C19.91 4.87 19.94 5.56 19.94 6.16L20 7C20 9.19 19.84 10.8 19.56 11.83C19.31 12.73 18.73 13.31 17.83 13.56C17.36 13.69 16.5 13.78 15.18 13.84C13.88 13.91 12.69 13.94 11.59 13.94L10 14C5.81 14 3.2 13.84 2.17 13.56C1.27 13.31 0.69 12.73 0.44 11.83C0.31 11.36 0.22 10.73 0.16 9.93C0.0900001 9.13 0.0599999 8.44 0.0599999 7.84L0 7C0 4.81 0.16 3.2 0.44 2.17C0.69 1.27 1.27 0.69 2.17 0.44C2.64 0.31 3.5 0.22 4.82 0.16C6.12 0.0899998 7.31 0.0599999 8.41 0.0599999L10 0C14.19 0 16.8 0.16 17.83 0.44C18.73 0.69 19.31 1.27 19.56 2.17Z" fill="white" />
+												</svg>
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="expert__exp">
+									<h2 class="expert__title title">
+										Опыт
+									</h2>
+									<p class="expert__text">
+										Имеет 20+ лет практического опыта в аудите, консалтинге и бухучете.15 лет
+										успешно
+										руководит проектами по аудиту и МСФО для компаний, занимающихся ритейлом,
+										лизингом,
+										добывающей промышленностью, IT-разработками и телекоммуникационными услугами.
+									</p>
+									<ul class="expert__list article-list _doted">
+										<li>100+ реализованных проектов для предприятий различных отраслей.</li>
+										<li>12 лет проводит открытые и корпоративные семинары по бухгалтерскому учету и
+											МСФО, тренинги по MS Excel, курсы подготовки к получению аттестата аудитора
+											и к
+											сдаче экзамена АССА ДипИФР.</li>
+										<li>К 2011 г. стала членом АССА, а в 2016 г. получила звание почетного члена
+											АССА в
+											Великобритании.</li>
+										<li>В 2016 г. сдала аттестацию аудиторов</li>
+										<li>Написала 21+ учебных пособий и статей по бухучёту и МСФО, которые помогут
+											вам
+											проверить учётную политику компании и повысить уровень знаний сотрудников.
+										</li>
+										<li>Выступление и участие в роли эксперта в РСА, АССА, УрФУ, ВЭШ.</li>
+									</ul>
+								</div>
+							</section>
+							<section class="expert__competencies-section">
+								<h2 class="expert__title title">Компетенции</h2>
+								<div class="article-tags">
+									<a href="#!" target="_blank" class="article-tags__tag">Аналитика</a>
+									<a href="#!" target="_blank" class="article-tags__tag">Управление бизнесом</a>
+									<a href="#!" target="_blank" class="article-tags__tag">Разработка стратегии</a>
+								</div>
+							</section>
+
+						</div>
+						<aside class="expert__aside">
+							<div class="expert__aside-wrapp">
+								<div class="verified-card">
+									<div class="verified-card__badge">
+										<svg class="stroke" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M9 9C10.6569 9 12 7.65685 12 6C12 4.34315 10.6569 3 9 3C7.34315 3 6 4.34315 6 6C6 7.65685 7.34315 9 9 9Z" stroke="#56883B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+											<path d="M3.75 15V14.25C3.75 11.3505 6.10051 9 9 9C9.8052 9 10.5681 9.18127 11.25 9.50522" stroke="#56883B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+											<path d="M12.4762 12.3114L13.2555 10.6591C13.3555 10.447 13.6445 10.447 13.7445 10.6591L14.5238 12.3114L16.2664 12.5779C16.49 12.6122 16.5791 12.8998 16.4173 13.0648L15.1565 14.35L15.4541 16.1657C15.4923 16.3989 15.2584 16.5767 15.0584 16.4666L13.5 15.6088L11.9416 16.4666C11.7416 16.5767 11.5077 16.3989 11.5459 16.1657L11.8435 14.35L10.5827 13.0648C10.4209 12.8998 10.51 12.6122 10.7336 12.5779L12.4762 12.3114Z" stroke="#56883B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+										</svg>
+										<span>Мы рады новым экспертам</span>
+									</div>
+									<p class="verified-card__text">
+										Бесплатно опубликуем статью, в которой через призму вашего профессионального
+										опыта
+										раскрывается тема: влияние компромата или негативной информации на личную жизнь
+										или бизнес
+									</p>
+									<a href="#!" class="verified-card__btn">Узнать подробнее</a>
+								</div>
+							</div>
+						</aside>
+					</div>
+					<section class="expert__publications-section">
+						<h2 class="expert__title title">Публикации и видео (7)</h2>
+						<div class="expert__cards article-cards">
+							<ul class="article-cards__list">
+								<li class="article-cards__item">
+									<a href="#!" class="article-cards__link">
+										<div class="article-cards__image">
+											<picture><source srcset="https://reputation.moscow/wp-content/uploads/article-list-01.webp" type="image/webp"><img src="https://reputation.moscow/wp-content/uploads/article-list-01.jpg" alt=""></picture>
+										</div>
+										<div class="article-cards__title">
+											Как работать с возражениями клиентов, если в сети пишут плохие
+											отзывы?
+										</div>
+										<div class="article-cards__text">
+											Все в детстве слышали фразу «Береги платье снову, а честь смолоду»,
+											но
+											как
+											быть владельцам бизнеса?
+										</div>
+										<div class="article-cards__stats stats">
+											<div class="stats__item">
+												<span>22.03.24</span>
+											</div>
+											<div class="stats__item">
+												<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<g clip-path="url(#clip0_1528_12234)">
+														<path d="M8 4L8 8L12 8" stroke="#AEAEAE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+														<path d="M8.00065 14.6667C11.6825 14.6667 14.6673 11.6819 14.6673 8C14.6673 4.3181 11.6825 1.33333 8.00065 1.33333C4.31875 1.33333 1.33398 4.3181 1.33398 8C1.33398 11.6819 4.31875 14.6667 8.00065 14.6667Z" stroke="#AEAEAE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+													</g>
+													<defs>
+														<clipPath id="clip0_1528_12234">
+															<rect width="16" height="16" fill="white" />
+														</clipPath>
+													</defs>
+												</svg>
+												<span> 10 мин</span>
+											</div>
+											<div class="stats__item">
+												<svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M6.00065 1.97333C6.64745 1.76829 7.32214 1.66484 8.00065 1.66666C10.7887 1.66666 12.686 3.33333 13.8173 4.80267C14.384 5.54 14.6673 5.90733 14.6673 7C14.6673 8.09333 14.384 8.46066 13.8173 9.19733C12.686 10.6667 10.7887 12.3333 8.00065 12.3333C5.21265 12.3333 3.31532 10.6667 2.18398 9.19733C1.61732 8.46133 1.33398 8.09266 1.33398 7C1.33398 5.90666 1.61732 5.53933 2.18398 4.80267C2.52956 4.35114 2.91439 3.93105 3.33398 3.54733" stroke="#AEAEAE" stroke-width="1.5" stroke-linecap="round" />
+													<path d="M10 7C10 7.53043 9.78929 8.03914 9.41421 8.41421C9.03914 8.78929 8.53043 9 8 9C7.46957 9 6.96086 8.78929 6.58579 8.41421C6.21071 8.03914 6 7.53043 6 7C6 6.46957 6.21071 5.96086 6.58579 5.58579C6.96086 5.21071 7.46957 5 8 5C8.53043 5 9.03914 5.21071 9.41421 5.58579C9.78929 5.96086 10 6.46957 10 7Z" stroke="#AEAEAE" stroke-width="1.5" />
+												</svg>
+												<span>198</span>
+											</div>
+											<div class="stats__item">
+												<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M7.99992 14.6666C11.6818 14.6666 14.6666 11.6819 14.6666 7.99998C14.6666 4.31808 11.6818 1.33331 7.99992 1.33331C4.31802 1.33331 1.33325 4.31808 1.33325 7.99998C1.33325 9.21427 1.6579 10.3527 2.22513 11.3333L1.66659 14.3333L4.66659 13.7748C5.64716 14.342 6.78563 14.6666 7.99992 14.6666Z" stroke="#AEAEAE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+												</svg>
+												<span>1</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li class="article-cards__item">
+									<a href="#!" target='_blank' class="article-cards__link">
+										<div class="article-cards__image">
+											<picture><source srcset="https://reputation.moscow/wp-content/uploads/article-list-02.webp" type="image/webp"><img src="https://reputation.moscow/wp-content/uploads/article-list-02.jpg" alt=""></picture>
+										</div>
+										<div class="article-cards__title">
+											Восстановление аккаунта Инстаграма*: инструкция по разблокировке
+										</div>
+										<div class="article-cards__text">
+											Как вернуть клиентов, охваты и заблокированный в Инстаграме* аккаунт?
+										</div>
+										<div class="article-cards__stats stats">
+											<div class="stats__item">
+												<span>22.03.24</span>
+											</div>
+											<div class="stats__item">
+												<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<g clip-path="url(#clip0_1528_12234)">
+														<path d="M8 4L8 8L12 8" stroke="#AEAEAE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+														<path d="M8.00065 14.6667C11.6825 14.6667 14.6673 11.6819 14.6673 8C14.6673 4.3181 11.6825 1.33333 8.00065 1.33333C4.31875 1.33333 1.33398 4.3181 1.33398 8C1.33398 11.6819 4.31875 14.6667 8.00065 14.6667Z" stroke="#AEAEAE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+													</g>
+													<defs>
+														<clipPath id="clip0_1528_12234">
+															<rect width="16" height="16" fill="white" />
+														</clipPath>
+													</defs>
+												</svg>
+												<span> 10 мин</span>
+											</div>
+											<div class="stats__item">
+												<svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M6.00065 1.97333C6.64745 1.76829 7.32214 1.66484 8.00065 1.66666C10.7887 1.66666 12.686 3.33333 13.8173 4.80267C14.384 5.54 14.6673 5.90733 14.6673 7C14.6673 8.09333 14.384 8.46066 13.8173 9.19733C12.686 10.6667 10.7887 12.3333 8.00065 12.3333C5.21265 12.3333 3.31532 10.6667 2.18398 9.19733C1.61732 8.46133 1.33398 8.09266 1.33398 7C1.33398 5.90666 1.61732 5.53933 2.18398 4.80267C2.52956 4.35114 2.91439 3.93105 3.33398 3.54733" stroke="#AEAEAE" stroke-width="1.5" stroke-linecap="round" />
+													<path d="M10 7C10 7.53043 9.78929 8.03914 9.41421 8.41421C9.03914 8.78929 8.53043 9 8 9C7.46957 9 6.96086 8.78929 6.58579 8.41421C6.21071 8.03914 6 7.53043 6 7C6 6.46957 6.21071 5.96086 6.58579 5.58579C6.96086 5.21071 7.46957 5 8 5C8.53043 5 9.03914 5.21071 9.41421 5.58579C9.78929 5.96086 10 6.46957 10 7Z" stroke="#AEAEAE" stroke-width="1.5" />
+												</svg>
+												<span>198</span>
+											</div>
+											<div class="stats__item">
+												<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M7.99992 14.6666C11.6818 14.6666 14.6666 11.6819 14.6666 7.99998C14.6666 4.31808 11.6818 1.33331 7.99992 1.33331C4.31802 1.33331 1.33325 4.31808 1.33325 7.99998C1.33325 9.21427 1.6579 10.3527 2.22513 11.3333L1.66659 14.3333L4.66659 13.7748C5.64716 14.342 6.78563 14.6666 7.99992 14.6666Z" stroke="#AEAEAE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+												</svg>
+												<span>1</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li class="article-cards__item">
+									<a href="#!" target='_blank' class="article-cards__link">
+										<div class="article-cards__image">
+											<picture><source srcset="https://reputation.moscow/wp-content/uploads/article-list-03.webp" type="image/webp"><img src="https://reputation.moscow/wp-content/uploads/article-list-03.png" alt=""></picture>
+										</div>
+										<div class="article-cards__title">
+											Репутационный аудит: как анализ инфополя помогает брендам оценить
+											уровень
+											доверия клиентов
+										</div>
+										<div class="article-cards__text">
+											Рассказываем, по каким факторам можно определить уровень доверия
+											клиентов и
+											в каких случаях стоит прибегать к удалению информации, чтобы сохранить
+											имидж.
+										</div>
+										<div class="article-cards__stats stats">
+											<div class="stats__item">
+												<span>22.03.24</span>
+											</div>
+											<div class="stats__item">
+												<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<g clip-path="url(#clip0_1528_12234)">
+														<path d="M8 4L8 8L12 8" stroke="#AEAEAE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+														<path d="M8.00065 14.6667C11.6825 14.6667 14.6673 11.6819 14.6673 8C14.6673 4.3181 11.6825 1.33333 8.00065 1.33333C4.31875 1.33333 1.33398 4.3181 1.33398 8C1.33398 11.6819 4.31875 14.6667 8.00065 14.6667Z" stroke="#AEAEAE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+													</g>
+													<defs>
+														<clipPath id="clip0_1528_12234">
+															<rect width="16" height="16" fill="white" />
+														</clipPath>
+													</defs>
+												</svg>
+												<span> 10 мин</span>
+											</div>
+											<div class="stats__item">
+												<svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M6.00065 1.97333C6.64745 1.76829 7.32214 1.66484 8.00065 1.66666C10.7887 1.66666 12.686 3.33333 13.8173 4.80267C14.384 5.54 14.6673 5.90733 14.6673 7C14.6673 8.09333 14.384 8.46066 13.8173 9.19733C12.686 10.6667 10.7887 12.3333 8.00065 12.3333C5.21265 12.3333 3.31532 10.6667 2.18398 9.19733C1.61732 8.46133 1.33398 8.09266 1.33398 7C1.33398 5.90666 1.61732 5.53933 2.18398 4.80267C2.52956 4.35114 2.91439 3.93105 3.33398 3.54733" stroke="#AEAEAE" stroke-width="1.5" stroke-linecap="round" />
+													<path d="M10 7C10 7.53043 9.78929 8.03914 9.41421 8.41421C9.03914 8.78929 8.53043 9 8 9C7.46957 9 6.96086 8.78929 6.58579 8.41421C6.21071 8.03914 6 7.53043 6 7C6 6.46957 6.21071 5.96086 6.58579 5.58579C6.96086 5.21071 7.46957 5 8 5C8.53043 5 9.03914 5.21071 9.41421 5.58579C9.78929 5.96086 10 6.46957 10 7Z" stroke="#AEAEAE" stroke-width="1.5" />
+												</svg>
+												<span>198</span>
+											</div>
+											<div class="stats__item">
+												<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M7.99992 14.6666C11.6818 14.6666 14.6666 11.6819 14.6666 7.99998C14.6666 4.31808 11.6818 1.33331 7.99992 1.33331C4.31802 1.33331 1.33325 4.31808 1.33325 7.99998C1.33325 9.21427 1.6579 10.3527 2.22513 11.3333L1.66659 14.3333L4.66659 13.7748C5.64716 14.342 6.78563 14.6666 7.99992 14.6666Z" stroke="#AEAEAE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+												</svg>
+												<span>1</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li class="article-cards__item">
+									<a href="#!" target='_blank' class="article-cards__link">
+										<div class="article-cards__image">
+											<picture><source srcset="https://reputation.moscow/wp-content/uploads/article-list-04.webp" type="image/webp"><img src="https://reputation.moscow/wp-content/uploads/article-list-04.png" alt=""></picture>
+										</div>
+										<div class="article-cards__title">
+											Как отвечать на негативные отзывы: рабочий рецепт на все случаи
+										</div>
+										<div class="article-cards__text">
+											Если о компании говорят, значит о ней знают. С одной стороны, это
+											хорошо. Но
+											как быть, если написанное — один негатив?
+										</div>
+										<div class="article-cards__stats stats">
+											<div class="stats__item">
+												<span>22.03.24</span>
+											</div>
+											<div class="stats__item">
+												<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<g clip-path="url(#clip0_1528_12234)">
+														<path d="M8 4L8 8L12 8" stroke="#AEAEAE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+														<path d="M8.00065 14.6667C11.6825 14.6667 14.6673 11.6819 14.6673 8C14.6673 4.3181 11.6825 1.33333 8.00065 1.33333C4.31875 1.33333 1.33398 4.3181 1.33398 8C1.33398 11.6819 4.31875 14.6667 8.00065 14.6667Z" stroke="#AEAEAE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+													</g>
+													<defs>
+														<clipPath id="clip0_1528_12234">
+															<rect width="16" height="16" fill="white" />
+														</clipPath>
+													</defs>
+												</svg>
+												<span> 10 мин</span>
+											</div>
+											<div class="stats__item">
+												<svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M6.00065 1.97333C6.64745 1.76829 7.32214 1.66484 8.00065 1.66666C10.7887 1.66666 12.686 3.33333 13.8173 4.80267C14.384 5.54 14.6673 5.90733 14.6673 7C14.6673 8.09333 14.384 8.46066 13.8173 9.19733C12.686 10.6667 10.7887 12.3333 8.00065 12.3333C5.21265 12.3333 3.31532 10.6667 2.18398 9.19733C1.61732 8.46133 1.33398 8.09266 1.33398 7C1.33398 5.90666 1.61732 5.53933 2.18398 4.80267C2.52956 4.35114 2.91439 3.93105 3.33398 3.54733" stroke="#AEAEAE" stroke-width="1.5" stroke-linecap="round" />
+													<path d="M10 7C10 7.53043 9.78929 8.03914 9.41421 8.41421C9.03914 8.78929 8.53043 9 8 9C7.46957 9 6.96086 8.78929 6.58579 8.41421C6.21071 8.03914 6 7.53043 6 7C6 6.46957 6.21071 5.96086 6.58579 5.58579C6.96086 5.21071 7.46957 5 8 5C8.53043 5 9.03914 5.21071 9.41421 5.58579C9.78929 5.96086 10 6.46957 10 7Z" stroke="#AEAEAE" stroke-width="1.5" />
+												</svg>
+												<span>198</span>
+											</div>
+											<div class="stats__item">
+												<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M7.99992 14.6666C11.6818 14.6666 14.6666 11.6819 14.6666 7.99998C14.6666 4.31808 11.6818 1.33331 7.99992 1.33331C4.31802 1.33331 1.33325 4.31808 1.33325 7.99998C1.33325 9.21427 1.6579 10.3527 2.22513 11.3333L1.66659 14.3333L4.66659 13.7748C5.64716 14.342 6.78563 14.6666 7.99992 14.6666Z" stroke="#AEAEAE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+												</svg>
+												<span>1</span>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li class="article-cards__item">
+									<div class="article-cards__video">
+										<iframe src="https://www.youtube.com/embed/20SKJYD1650" title="Как удалить свой цифровой след в интернете?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+									</div>
+									<div class="article-cards__title">
+										Регина Шакирова: топ-6 лучших и худших кейсов от экспертов Репутация
+										Москва
+									</div>
+								</li>
+								<li class="article-cards__item">
+									<div class="article-cards__video">
+										<iframe src="https://www.youtube.com/embed/20SKJYD1650" title="Как удалить свой цифровой след в интернете?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+									</div>
+									<div class="article-cards__title">
+										Регина Шакирова: топ-6 лучших и худших кейсов от экспертов Репутация
+										Москва
+									</div>
+								</li>
+								<li class="article-cards__item">
+									<div class="article-cards__video">
+										<iframe src="https://www.youtube.com/embed/20SKJYD1650" title="Как удалить свой цифровой след в интернете?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+									</div>
+									<div class="article-cards__title">
+										Регина Шакирова: топ-6 лучших и худших кейсов от экспертов Репутация
+										Москва
+									</div>
+								</li>
+								<li class="article-cards__item">
+									<div class="experts-block _v2">
+										<div class="experts-block__list">
+											<div class="experts-block__avatar">
+												<picture><source srcset="https://reputation.moscow/wp-content/uploads/avatar01.webp" type="image/webp"><img src="https://reputation.moscow/wp-content/uploads/avatar01.png" alt=""></picture>
+											</div>
+											<div class="experts-block__avatar">
+												<picture><source srcset="https://reputation.moscow/wp-content/uploads/avatar02.webp" type="image/webp"><img src="https://reputation.moscow/wp-content/uploads/avatar02.png" alt=""></picture>
+											</div>
+											<div class="experts-block__avatar">
+												<picture><source srcset="https://reputation.moscow/wp-content/uploads/avatar03.webp" type="image/webp"><img src="https://reputation.moscow/wp-content/uploads/avatar03.png" alt=""></picture>
+											</div>
+											<div class="experts-block__avatar">
+												<picture><source srcset="https://reputation.moscow/wp-content/uploads/avatar04.webp" type="image/webp"><img src="https://reputation.moscow/wp-content/uploads/avatar04.png" alt=""></picture>
+											</div>
+											<div class="experts-block__avatar">
+												<picture><source srcset="https://reputation.moscow/wp-content/uploads/star-avatar.webp" type="image/webp"><img src="https://reputation.moscow/wp-content/uploads/star-avatar.png" alt=""></picture>
+											</div>
+										</div>
+										<div class="experts-block__title">Более 300 статей и комментариев
+											от экспертов</div>
+										<p class="experts-block__text">Как можно удалить информацию, как
+											ответить недовольному
+											клиенту и многое другое. Делимся экспертным мнением из разных сфер
+											деятельности
+										</p>
+										<a href="#!" target="_blank" class="experts-block__btn btn-m btn btn-dark">Перейти в
+											журнал</a>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</section>
+				</div>
+			</div>
+		</div>
+		<footer class="footer bg-dark experts__footer">
+			<div class="footer__container">
+				<div class="footer__top">
+					<div class="footer__body">
+						<a href="/" class="footer__logo"><img src="img/logo-light.svg" alt=""></a>
+						<div class="footer__col social-comp">
+							<p class="social-comp__text">Подписывайтесь, чтобы быть в курсе как бороться с онлайн-кризисами</p>
+							<div class="social-comp__link-icons">
+								<a href="" class="social-comp__link "><img src="img/icons/fb.svg" alt=""></a>
+								<a href="" class="social-comp__link "><img src="img/icons/vk.svg" alt=""></a>
+								<a href="" class="social-comp__link "><img src="img/icons/yt.svg" alt=""></a>
+								<a href="" class="social-comp__link "><img src="img/icons/vc.svg" alt=""></a>
+							</div>
+							<p class="social-comp__readers">Наша бизнес аудитория: 97 тысяч читателей</p>
+							<a target="_blank" href="#!" class="social-comp__safety">
+								<picture><source srcset="img/tinkoff.webp" type="image/webp"><img src="img/tinkoff.png" alt=""></picture>
+								<p>Надежность компании подтверждена Тинькофф</p>
+							</a>
+						</div>
+						<div class="footer__col footer-menu">
+							<div class="footer-menu__col">
+								<div class="footer-menu__title">Быстрые ссылки</div>
+								<ul class="footer-menu__list">
+									<li class="footer-menu__item"><a href="#!" class="footer-menu__link _head">Главная</a></li>
+									<li class="footer-menu__item"><a href="#!" class="footer-menu__link _head">О компании</a>
+									</li>
+									<li class="footer-menu__item"><a href="#!" class="footer-menu__link _head">Кейсы</a></li>
+									<li class="footer-menu__item"><a href="#!" class="footer-menu__link _head">Контакты</a></li>
+									<li class="footer-menu__item"><a href="#!" class="footer-menu__link _head">Журнал</a></li>
+									<li class="footer-menu__item"><a href="#!" class="footer-menu__link">Статьи</a></li>
+									<li class="footer-menu__item"><a href="#!" class="footer-menu__link">Стать автором</a></li>
+									<li class="footer-menu__item"><a href="#!" class="footer-menu__link">Правила перепечатки</a>
+									</li>
+								</ul>
+							</div>
+							<div class="footer-menu__col">
+								<div class="footer-menu__title">Услуги</div>
+								<ul class="footer-menu__list">
+									<li class="footer-menu__item"><a href="#!" class="footer-menu__link _head">Все услуги</a>
+									</li>
+									<li class="footer-menu__item"><a href="#!" class="footer-menu__link">Удаление информации из
+											сети</a></li>
+									<li class="footer-menu__item"><a href="#!" class="footer-menu__link">Удаление ссылок из
+											поиска</a></li>
+									<li class="footer-menu__item"><a href="#!" class="footer-menu__link">Удаление украденных
+											статей</a></li>
+									<li class="footer-menu__item"><a href="#!" class="footer-menu__link">Юридическое
+											удаление</a>
+									</li>
+									<li class="footer-menu__item"><a href="#!" class="footer-menu__link">Право на забвение</a>
+									</li>
+									<li class="footer-menu__item"><a href="#!" class="footer-menu__link">Управление
+											репутацией</a>
+									</li>
+									<li class="footer-menu__item"><a href="#!" class="footer-menu__link">Анализ репутации</a>
+									</li>
+									<li class="footer-menu__item"><a href="#!" class="footer-menu__link">Исследование
+											репутационных
+											угроз</a></li>
+									<li class="footer-menu__item"><a href="#!" class="footer-menu__link">Подобрать решение</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="footer__col footer-contacts">
+							<div class="footer-contacts__title">Контакты</div>
+							<div class="footer-contacts__contacts">
+								<a class="footer-contacts__link _mail" href="mailto:mail@reputation.moscow">
+									mail@reputation.moscow
+								</a>
+								<a class="footer-contacts__link _phone" href="tel:88002508865">8 (800) 250 88 65</a>
+							</div>
+							<address class="footer-contacts__address">
+								<p>420110, Казань, ул. Университетская, д. 5/37, оф. 501</p>
+								<p>123100, Москва, наб. Пресненская, д. 12, этаж 45, ком. 10, оф. 12</p>
+							</address>
+							<button class="footer-contacts__btn btn btn-primary btn-100 get-call">Заказать звонок</button>
+							<div class="footer__widget arsen-widget">
+								<div class="arsen-widget__img">
+									<picture><source srcset="https://reputation.moscow/wp-content/uploads/arsen.webp" type="image/webp"><img src="https://reputation.moscow/wp-content/uploads/arsen.png" alt=""></picture>
+								</div>
+								<div class="arsen-widget__content _light-clr">
+									<div class="arsen-widget__title">Есть вопрос или предложения?</div>
+									<div class="arsen-widget__text">
+										<button class="arsen-widget__link">Напишите Арсению</button>, директору Репутация Москва
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="footer__bottom footer-bottom">
+					<div class="footer-bottom__body">
+						<div class="footer-bottom__info">
+							<a target="_blank" href="#!" class="footer-bottom__link">Политика конфиденциальности</a>
+							<a target="_blank" href="#!" class="footer-bottom__link">Входим в Единый реестр аккредитованных
+								организаций, осуществляющих деятельность в области маркетинга и информационных технологий</a>
+							<div class="footer-bottom__copyright">
+								© 2012 – 2023 Репутация.Москва<br>
+								ООО "Репутейшн компани", ИНН 1655380387, ОГРН 1171690009600
+							</div>
+						</div>
+						<a href="#!" target="_blank" class="footer-bottom__brand">
+							<p>The Reputation.Earth Project</p>
+							<img src="img/logo-earth.svg" alt="">
+						</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<div class="toast-bar _coockie _active">
+			<div class="toast-bar__content ">
+				<div class="toast-bar__icon d-none">
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M2 19V5C2 3.89543 2.89543 3 4 3H20C21.1046 3 22 3.89543 22 5V19C22 20.1046 21.1046 21 20 21H4C2.89543 21 2 20.1046 2 19Z" stroke="white" stroke-width="1.5" />
+						<path d="M2 7L22 7" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+						<path d="M5 5.01L5.01 4.99889" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+						<path d="M8 5.01L8.01 4.99889" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+						<path d="M11 5.01L11.01 4.99889" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+						<path d="M11.6667 11L10 14H14L12.3333 17" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+				</div>
+				<div class="toast-bar__text">
+					<div class="toast-bar__title">
+						Этот сайт использует файлы cookie.
+					</div>
+					<div class="toast-bar__subtitle d-none">Какой-то подзаголовок. Ой а вдруг он длинный, перенесется значит
+					</div>
+				</div>
+			</div>
+			<div class="toast-bar__actions">
+				<button type="button" class="toast-bar__btn btn btn-m btn-light">Ок</button>
+				<button type="button" class="toast-bar__close d-none">
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M6.75729 17.2426L11.9999 12M17.2426 6.75736L11.9999 12M11.9999 12L6.75729 6.75736M11.9999 12L17.2426 17.2426" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+				</button>
+			</div>
+		</div>
+	</div>
+	<script src="js/app.min.js?_v=20240729172649"></script>
+</body>
+
+</html>
